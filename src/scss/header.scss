@@ -1,0 +1,33 @@
+header {
+    position: relative;
+    z-index: 1;
+    .container {
+        display: flex;
+    }
+
+    .logo,
+    nav {
+        flex: auto;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-end;
+        li {
+            padding: 0 20px;
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+
+    .logo {
+        display: flex;
+        
+    }
+}
