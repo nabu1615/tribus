@@ -35,11 +35,11 @@ li {
 
 .home {
     &__bg-image {
-        width: 40%;
+        width: 100%;
         height: 100%;
         position: absolute;
-        object-fit: contain;
-        object-position: top;
+        object-fit: cover;
+        object-position: bottom;
         top: 0;
         right: 0;
     }
@@ -53,6 +53,11 @@ li {
         padding-bottom: 10%;
         &---half {
             width: 50%;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
         }
     }
 }
@@ -81,7 +86,7 @@ li {
 nav {
     li {
         display: inline-block;
-        font-size: 14px;
+        font-size: 15px;
         a {
             font-weight: 800;
             text-transform: uppercase;
@@ -109,21 +114,37 @@ a {
     li {
         font-weight: normal;
         display: inline-block;
-        margin: 0 4px;
+        margin: 0 10px;
         i {
-            font-size: 16px;
+            font-size: 22px;
+            color: white;
         }
     }
 }
 
 .logo {
     cursor: pointer;
+    position: relative;
+    top: 10px;
     img {
         width: 180px;
     }
 }
 
 $panelcount: 5;
+
+.content {
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: rgba(white, 0.25)
+    }
+}
 
 .wrapper{
     width: 100%;
@@ -153,4 +174,9 @@ $panelcount: 5;
       bottom: 100%;
       width: 100%;
       bottom: 0;
+      transition: all .4s ease-in-out;
+      &.open {
+          width: 90vw;
+          z-index: 2;
+      }
   }

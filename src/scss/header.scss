@@ -3,6 +3,44 @@ header {
     position: fixed;
     z-index: 1;
     width: 100%;
+    padding: 20px 0;
+    &.open {
+        z-index: 2;
+        .logo,
+        .nav__m-icon {
+            position: relative;
+            z-index: 4;
+        }
+
+        .logo {
+            right: 25px;
+            &__image {
+                &--white {
+                    display: block;
+                }
+
+                &--basic {
+                    display: none;
+                }
+            }
+        }
+
+        .nav__m-icon {
+            right: 20px;
+            span {
+                background-color: white;
+                &:nth-child(2) {
+                    transform: translateY(-12px) rotate(-135deg);
+                }
+                &:nth-child(1) {
+                    transform: translateY(2px) rotate(135deg);
+                }
+                &:nth-child(3) {
+                    display: none;
+                }
+            }
+        }
+    }
     .container {
         display: flex;
     }
@@ -12,11 +50,48 @@ header {
         flex: auto;
     }
 
-    nav {
+    .nav {
         display: flex;
         align-items: center;
         flex-direction: row;
         justify-content: flex-end;
+        position: relative;
+        ul {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 90vw;
+            height: 100vh;
+            background-color: red;
+            z-index: 3;
+            @media (min-width: 1000px) {
+                display: block;
+                position: relative;
+                width: auto;
+                height: auto;
+                background-color: initial;
+                z-index: initial;
+            }
+            &.active {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                li {
+                    width: 100%;
+                    text-align: center;
+                    margin: 0;
+                    padding: 20px 0;
+                    font-size: 30px;
+                    color: white;
+                    a {
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+
         li {
             padding: 0 20px;
             &:first-child {
@@ -26,10 +101,48 @@ header {
                 padding-right: 0;
             }
         }
+
+        &__m-icon {
+            width: 22px;
+            height: 18px;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            @media (min-width: 1000px) {
+                display: none;
+            }
+            span {
+                width: 100%;
+                height: 4px;
+                background-color: #333;
+                border-radius: 20px;
+                transition: all .4s ease-in-out;
+            }
+        }
+
+        &__m-overlay {
+            display: none;
+            background: rgba(#333, .5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            cursor: pointer;
+            &.active {
+                display: block;
+            }
+        }
     }
 
     .logo {
         display: flex;
-        
+        &__image {
+            &--white {
+                display: none;
+            }
+        }
     }
 }

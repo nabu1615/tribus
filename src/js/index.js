@@ -44,3 +44,48 @@ new ScrollMagic.Scene({
     .setTween(horizontalSlide)
     .addTo(controller);
     //.addIndicators() // add indicators (requires plugin)
+
+    // Header
+
+    (() => {
+        const nodes = {
+            header: document.querySelector('header'),
+            navIcon: document.querySelector('.nav__m-icon'),
+            navUl: document.querySelector('.nav__wrapper'),
+            navOverlay: document.querySelector('.nav__m-overlay'),
+            logo: document.querySelector('.logo'),
+            logoImage: document.querySelector('.logo__image'),
+            navItems: document.querySelectorAll('.nav__item'),
+            footer: document.querySelector('footer')
+        };
+
+        function toggleNav() {
+            nodes.navUl.classList.toggle('active');
+            nodes.header.classList.toggle('open');
+            nodes.navOverlay.classList.toggle('active');
+            nodes.footer.classList.toggle('open');
+        }
+
+        nodes.navIcon.addEventListener('click', (e) => {
+            toggleNav();
+        });
+
+        nodes.logo.addEventListener('click', (e) => {
+            if (nodes.header.classList.contains('open')) {
+                toggleNav();
+            }
+        });
+
+        nodes.navOverlay.addEventListener('click', (e) => {
+            toggleNav();
+        });
+
+        nodes.navItems.forEach((item) => {
+            item.addEventListener('click', (e) => {
+                if (nodes.header.classList.contains('open')) {
+                    toggleNav();
+                }
+            });
+        });
+
+    })();
