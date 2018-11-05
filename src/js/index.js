@@ -115,7 +115,7 @@ new ScrollMagic.Scene({
         const glide = new Glide('.glide', {
             type: 'carousel',
             perView: 1,
-            autoplay: 5000,
+            autoplay: 7000,
             mode: 'vertical'
         });
 
