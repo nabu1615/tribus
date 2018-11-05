@@ -27,10 +27,14 @@
                 </div>
                 <div class="nav__m-overlay"></div>
                 <ul class="nav__wrapper">
-                    <li class="nav__item" id="about"><a href="">about</a></li>
-                    <li class="nav__item" id="services"><a href="">servicios</a></li>
-                    <li class="nav__item" id="team"><a href="">equipo</a></li>
-                    <li class="nav__item" id="contact"><a href="">contacto</a></li>
+                    <li class="nav__item" data-nav-item="about" id="about">
+                        <a class="nav__anchor" href="">about</a></li>
+                    <li class="nav__item" data-nav-item="services" id="services">
+                        <a class="nav__anchor" href="">servicios</a></li>
+                    <li class="nav__item" data-nav-item="team" id="team">
+                        <a class="nav__anchor" href="">equipo</a></li>
+                    <li class="nav__item" data-nav-item="contact" id="contact">
+                        <a class="nav__anchor" href="">contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -41,47 +45,59 @@
                 <img src="./assets/home.jpg" alt="" class="home__bg-image">
                 <div class="home__content container">
                     <div class="home__content---half">
-                        <h1 class="title">Stop, Think & then Communicate.</h1>
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor
-                            incididunt ut ero labore et dolore magna aliqua.
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco poriti laboris nisi ut aliquip
-                            ex ea
-                            commodo
-                            consequat. </p>
+                        <h1 class="title">Detente, Piensa y luego Comunica.</h1>
+                        <p class="description">Nuestro enfoque es analizar las solicitudes del cliente y sus
+                            necesidades inmediatas, en términos de comunicación, aplicando estrategias de marketing
+                            para definir y ofrecer servicios publicitarios justos, con el objetivo de generar
+                            resultados positivos y optimizar la inversión.</p>
                         <button class="btn">conoce más</button>
                     </div>
                 </div>
             </section>
-            <section>
+            <section class="about content">
                 <img src="./assets/about.jpg" alt="" class="home__bg-image">
                 <div class="home__content container">
                     <div class="home__content---half">
-                        <h1 class="title">2</h1>
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor
-                            incididunt ut ero labore et dolore magna aliqua.
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco poriti laboris nisi ut aliquip
-                            ex ea
-                            commodo
-                            consequat. </p>
-                        <button class="btn">conoce más</button>
+                        <h1 class="title">La Agencia</h1>
+                        <p class="description">Somos más que una agencia de publicidad. Nos gustan los retos, y
+                            queremos brindar un servicio apoyado en la gestión de proyectos y el Marketing
+                            publicitario.
+                            Creamos estrategias de marketing digital, campañas publicitarias, diseño web y piezas
+                            audiovisuales que permiten lograr una inversión segura y estable.</p>
                     </div>
                 </div>
             </section>
-            <section>
+            <section class="services content">
                 <img src="./assets/services.jpg" alt="" class="home__bg-image">
                 <div class="home__content container">
                     <div class="home__content---half">
-                        <h1 class="title">3</h1>
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor
-                            incididunt ut ero labore et dolore magna aliqua.
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco poriti laboris nisi ut aliquip
-                            ex ea
-                            commodo
-                            consequat. </p>
-                        <button class="btn">conoce más</button>
+                        <h1 class="title">Servicios</h1>
+                        <p class="description">Nuestra Tribu esta conformada por profesionales con experiencia, que nos
+                            permite crear estrategias de marketing, campañas publicitarias, diseño web y piezas
+                            audiovisuales que permiten lograr una inversión segura y estable. Apalancados en la gestión
+                            de proyectos de comunicación.</p>
+                        <blockquote>
+                            <span>“</span>
+                                Antes que cualquier otra cosa, estar preparado es el secreto del éxito. 
+                            <span>”</span>
+                            <footer>Henry Ford</footer>
+                        </blockquote>
+
+                        <div class="glide">
+                            <div class="glide__track" data-glide-el="track">
+                                <ul class="glide__slides">
+                                    <li class="glide__slide">0</li>
+                                    <li class="glide__slide">1</li>
+                                    <li class="glide__slide">2</li>
+                                    <li class="glide__slide">3</li>
+                                    <li class="glide__slide">4</li>
+                                </ul>
+                            </div>
+                            <div class="glide__arrows" data-glide-el="controls">
+                                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+                                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -124,7 +140,7 @@
         </div>
     </main>
 
-    <footer>
+    <footer class="footer">
         <ul class="social">
             <li>
                 <a href="">

@@ -1,4 +1,5 @@
-import '../scss/main.scss'
+import '../scss/main.scss';
+import Glide from '@glidejs/glide';
 
 
 let controller = new ScrollMagic.Controller(),
@@ -9,7 +10,22 @@ let controller = new ScrollMagic.Controller(),
     .to("#js-slideContainer", 1, { x: "-60%" })
     .to("#js-slideContainer", 1, { x: "-80%" })
 
-document.getElementById('about').addEventListener('click', (e) => {
+const nodes = {
+    body: document.querySelector('body'),
+    header: document.querySelector('header'),
+    about: document.getElementById('about'),
+    navIcon: document.querySelector('.nav__m-icon'),
+    navUl: document.querySelector('.nav__wrapper'),
+    navOverlay: document.querySelector('.nav__m-overlay'),
+    logo: document.querySelector('.logo'),
+    logoImage: document.querySelector('.logo__image'),
+    navItems: document.querySelectorAll('.nav__item'),
+    navAnchors: document.querySelectorAll('.nav__anchor'),
+    footer: document.querySelector('.footer'),
+    servicesItems: document.querySelector('.services__items')
+};
+
+nodes.about.addEventListener('click', (e) => {
     e.preventDefault();
     new TimelineMax().to("#js-slideContainer", 1, { x: "-20%" });
 });
@@ -31,6 +47,7 @@ document.getElementById('contact').addEventListener('click', (e) => {
 
 document.getElementById('logo').addEventListener('click', (e) => {
     e.preventDefault();
+    nodes.body.removeAttribute('class');
     new TimelineMax().to("#js-slideContainer", 1, { x: "0%" });
 });
 
@@ -48,17 +65,6 @@ new ScrollMagic.Scene({
     // Header
 
     (() => {
-        const nodes = {
-            header: document.querySelector('header'),
-            navIcon: document.querySelector('.nav__m-icon'),
-            navUl: document.querySelector('.nav__wrapper'),
-            navOverlay: document.querySelector('.nav__m-overlay'),
-            logo: document.querySelector('.logo'),
-            logoImage: document.querySelector('.logo__image'),
-            navItems: document.querySelectorAll('.nav__item'),
-            footer: document.querySelector('footer')
-        };
-
         function toggleNav() {
             nodes.navUl.classList.toggle('active');
             nodes.header.classList.toggle('open');
@@ -71,6 +77,10 @@ new ScrollMagic.Scene({
         });
 
         nodes.logo.addEventListener('click', (e) => {
+            nodes.navAnchors.forEach((item) => { 
+                item.removeAttribute('class');
+            });
+
             if (nodes.header.classList.contains('open')) {
                 toggleNav();
             }
@@ -82,10 +92,32 @@ new ScrollMagic.Scene({
 
         nodes.navItems.forEach((item) => {
             item.addEventListener('click', (e) => {
+                const sectionName = e.currentTarget.getAttribute('data-nav-item');
+
+                nodes.navAnchors.forEach((item) => { 
+                    item.removeAttribute('class');
+                });
+                
+                nodes.body.removeAttribute('class');
+                nodes.body.classList.add(sectionName);
+                
+                if (window.innerWidth >= 1000) {
+                    e.target.classList.add('active');
+                }
+
                 if (nodes.header.classList.contains('open')) {
                     toggleNav();
                 }
             });
         });
 
+
+        const glide = new Glide('.glide', {
+            type: 'carousel',
+            perView: 1,
+            autoplay: 5000,
+            mode: 'vertical'
+        });
+
+        glide.mount();
     })();

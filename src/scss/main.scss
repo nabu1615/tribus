@@ -1,9 +1,11 @@
+@import './variables';
 @import './grid';
 @import './header';
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
 
 body {
     font-family: 'Raleway', sans-serif;
-    color: #333;
+    color: $base;
 }
 
 body, 
@@ -33,6 +35,77 @@ li {
     font-weight: 600;
 }
 
+
+blockquote {
+    position: relative;
+    font-style: italic;
+    footer {
+        font-weight: 800;
+    }
+    span {
+        color: $services;
+        font-weight: 800;
+    }
+}
+
+body {
+    &.about {
+        .home__content---half {
+            transform: translate(0);
+            top: 12%;
+            @media (min-width: 1000px) {
+                top: 20%;
+            }
+        }
+
+        footer {
+            i {
+                color: $base;
+            }
+        }
+    }
+
+    &.services {
+        .content {
+            &:after {
+                background-color: rgba($base, .9);
+            }
+        }
+
+        .title {
+            color: $services;
+        }
+
+        .description,
+        blockquote {
+            color: white;
+        }
+
+        header {
+            .logo {
+                &__image {
+                    &--white {
+                        display: block;
+                    }
+    
+                    &--basic {
+                        display: none;
+                    }
+                }
+            }
+
+            .nav__m-icon span {
+                background-color: white;
+            }
+        }
+
+        .home__content---half {
+            transform: translate(0);
+            top: 12%;
+        }
+    }
+}
+
 .home {
     &__bg-image {
         width: 100%;
@@ -52,19 +125,38 @@ li {
         justify-content: flex-end;
         padding-bottom: 10%;
         &---half {
-            width: 50%;
+            width: 100%;
             position: absolute;
             left: 0;
             top: 50%;
             transform: translateY(-50%);
             z-index: 1;
+            text-align: center;
+            @media (min-width: 1000px) {
+                text-align: left;
+            }
+            .title {
+                text-align: center;
+                @media (min-width: 1000px) {
+                    text-align: left;
+                }
+            }
+            .description {
+                text-align: left;
+            }
+            @media (min-width: 1000px) {
+                width: 50%;
+            }
         }
     }
 }
 
 .title {
     font-weight: 800;
-    font-size: 46px;
+    font-size: 30px;
+    @media (min-width: 1000px) {
+        font-size: 46px;
+    }
 }
 
 .description {
@@ -73,7 +165,7 @@ li {
 
 .btn {
     color: white;
-    background-color: #E30613;
+    background-color: $second;
     text-transform: uppercase;
     border: 0;
     padding: 10px 20px;
@@ -81,6 +173,11 @@ li {
     font-size: 14px;
     box-sizing: border-box;
     line-height: 1;
+    transition: all .4s ease-in-out;
+    &:hover {
+        background-color: $base;
+        color: white;
+    }
 }
 
 nav {
@@ -90,6 +187,15 @@ nav {
         a {
             font-weight: 800;
             text-transform: uppercase;
+            &:hover {
+                color: $second;
+            }
+            &.active {
+                border-bottom: 2px solid $base;
+                &:hover {
+                    border-bottom: 2px solid $second;
+                }
+            }
         }
     }
 }
@@ -111,6 +217,11 @@ a {
     left: 0;
     text-align: center;
     padding-bottom: 10px;
+    display: none;
+    @media (min-width: 1000px) {
+        display: block;
+        padding-bottom: 30px;
+    }
     li {
         font-weight: normal;
         display: inline-block;
@@ -169,7 +280,7 @@ $panelcount: 5;
     box-sizing: border-box;
   }
 
-  footer {
+  .footer {
       position: fixed;
       bottom: 100%;
       width: 100%;
@@ -178,5 +289,8 @@ $panelcount: 5;
       &.open {
           width: 90vw;
           z-index: 2;
+          .social {
+              display: block;
+          }
       }
   }
