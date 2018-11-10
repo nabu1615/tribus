@@ -4,6 +4,7 @@ import Glide from '@glidejs/glide';
     (()=> {
         const nodes = {
             sections: document.querySelectorAll('section'),
+            sectionsWrapper: document.querySelector('.sections'),
             navItems: document.querySelectorAll('.nav__item'),
             navAnchors: document.querySelectorAll('.nav__anchor'),
             body: document.querySelector('body'),
@@ -17,19 +18,24 @@ import Glide from '@glidejs/glide';
             navAnchors: document.querySelectorAll('.nav__anchor'),
             footer: document.querySelector('.footer'),
             servicesItems: document.querySelector('.services__items'),
-            wWidth: window.innerWidth
+            wWidth: window.innerWidth,
+            sectionNames: []
         }
 
+        const ctrl = new ScrollMagic.Controller({
+            globalSceneOptions: {
+                triggerHook: 'onLeave',
+                duration: 561
+            }
+        })
         
         window.addEventListener('resize', () => {
             nodes.wWidth = window.innerWidth;
-        });
-    
-        const ctrl = new ScrollMagic.Controller({
-            globalSceneOptions: {
-                triggerHook: 'onLeave'
+
+            if (nodes.wWidth <= 1000) {
+                nodes.sectionsWrapper.removeAttribute('style');
             }
-        })
+        });
 
         function toggleNav() {
             nodes.navUl.classList.toggle('active');
@@ -39,9 +45,10 @@ import Glide from '@glidejs/glide';
         }
 
         nodes.navItems.forEach((item) => {
+            let id = item.querySelector('a').getAttribute('href');
+            nodes.sectionNames.push(id);
             item.addEventListener('click',  e => {
                 e.preventDefault();
-                let id = e.currentTarget.querySelector('a').getAttribute('href');
     
                 ctrl.scrollTo(id);
     
@@ -72,13 +79,21 @@ import Glide from '@glidejs/glide';
             })
         })
 
+        nodes.sectionNames.forEach((section) => {
+            new ScrollMagic.Scene({triggerElement: section})
+            .setClassToggle('body', `body--${section.replace('#', '')}`)
+            .addTo(ctrl);
+        });
+
         nodes.navItems.forEach((item) => {
+            const id = item.querySelector('a').getAttribute('href');
             item.addEventListener('click', (e) => {
                 nodes.navAnchors.forEach((item) => { 
                     item.removeAttribute('class');
                 });
                 
                 nodes.body.removeAttribute('class');
+                nodes.body.classList.add(`body--${id.replace('#', '')}`);
                 
                 if (nodes.wWidth >= 1000) {
                     e.target.classList.add('active');

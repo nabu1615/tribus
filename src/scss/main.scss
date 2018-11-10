@@ -60,7 +60,7 @@ blockquote {
 }
 
 body {  
-  &.about {
+  &.body--about {
     .home__content---half {
       transform: translate(0);
       top: 146px;
@@ -76,10 +76,19 @@ body {
     }
   }
 
-  &.services {
+  &.body--services {
     .content {
       &:after {
         background-color: rgba($base, 0.9);
+      }
+    }
+
+    .description {
+      color: white;
+    }
+    @media (min-width: 1000px) {
+      .nav__item {
+        color: white;
       }
     }
 
@@ -113,6 +122,7 @@ body {
     .home__content---half {
       transform: translate(0);
       top: 146px;
+      width: 100%;
     }
   }
 }
@@ -281,8 +291,9 @@ $panelcount: 5;
   bottom: 0;
   transition: all 0.4s ease-in-out;
   &.open {
-    width: 90vw;
+    width: 50vw;
     z-index: 2;
+    right: 0;
     .social {
       display: block;
     }

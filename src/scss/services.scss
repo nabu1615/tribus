@@ -17,6 +17,19 @@
         }
     }
 
+    .home__content {
+        @media (min-width: 1000px) {
+            display: flex;
+            width: 100%;
+        }
+    }
+
+    &__info {
+        @media (min-width: 1000px) {
+            width: 50%;
+        }
+    }
+    
     .glide__arrow {
         border: 0;
         background-image: url(./assets/arrow.svg);
