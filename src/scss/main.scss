@@ -55,6 +55,9 @@ blockquote {
   font-style: italic;
   padding: 0;
   margin: 0;
+  @media (min-width: $desktop) {
+    font-size: 17px;
+  }
   footer {
     font-weight: 800;
   }
@@ -136,12 +139,16 @@ body {
   font-weight: 800;
   font-size: 30px;
   @media (min-width: $desktop) {
-    font-size: 46px;
+    font-size: 60px;
+    font-weight: 900;
   }
 }
 
 .description {
   font-size: 14px;
+  @media (min-width: $desktop) {
+    font-size: 17px;
+  }
 }
 
 .btn {
@@ -149,9 +156,9 @@ body {
   background-color: $second;
   text-transform: uppercase;
   border: 0;
-  padding: 10px 20px;
-  min-width: 210px;
-  font-size: 14px;
+  padding: 10px 30px;
+  font-size: 18px;
+  font-weight: 900;
   box-sizing: border-box;
   line-height: 1;
   transition: all 0.4s ease-in-out;
@@ -201,7 +208,7 @@ a {
   img {
     width: 120px;
     @media only screen and (min-width: $desktop) {
-      width: 180px;
+      width: 200px;
     }
   }
 }
@@ -261,7 +268,7 @@ $panelcount: 5;
         text-align: left;
       }
       @media (min-width: $desktop) {
-        width: 50%;
+        width: 60%;
       }
     }
   }
