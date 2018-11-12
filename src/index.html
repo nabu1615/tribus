@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:600,800" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
 </head>
 
 <body>
@@ -42,9 +44,12 @@
     <main class="wrapper" id="js-wrapper">
         <div class="sections" id="js-slideContainer">
             <section class="home content" id="home">
-                <img src="./assets/home.jpg" alt="" class="home__bg-image">
-                <div class="home__content container">
-                    <div class="home__content---half">
+                <picture class="content__bg-image">
+                    <source media="(max-width: 960px)" srcset="./assets/home-mobile.jpg">
+                    <img src="./assets/home.jpg" alt="" class="content__image">
+                </picture>
+                <div class="content__wrapper container">
+                    <div class="content---half">
                         <h1 class="title">Detente, Piensa y luego Comunica.</h1>
                         <p class="description">Nuestro enfoque es analizar las solicitudes del cliente y sus
                             necesidades inmediatas, en términos de comunicación, aplicando estrategias de marketing
@@ -55,9 +60,11 @@
                 </div>
             </section>
             <section id="about" class="about content">
-                <img src="./assets/about.jpg" alt="" class="home__bg-image">
-                <div class="home__content container">
-                    <div class="home__content---half">
+                <picture class="content__bg-image">
+                    <img src="./assets/about.jpg" alt="" class="content__image">
+                </picture>
+                <div class="content__wrapper container">
+                    <div class="content---half">
                         <h1 class="title">La Agencia</h1>
                         <p class="description">Somos más que una agencia de publicidad. Nos gustan los retos, y
                             queremos brindar un servicio apoyado en la gestión de proyectos y el Marketing
@@ -68,14 +75,18 @@
                 </div>
             </section>
             <section id="services" class="services content">
-                <img src="./assets/services.jpg" alt="" class="home__bg-image">
-                <div class="home__content container">
-                    <div class="home__content---half">
-                        <div class="services__info">
+                <picture class="content__bg-image">
+                    <img src="./assets/services.jpg" alt="" class="content__image">
+                </picture>
+                <div class="content__wrapper container">
+                    <div class="row services__wrapper">
+                        <div class="six columns services__info">
                             <h1 class="title">Servicios</h1>
-                            <p class="info">Nuestra Tribu esta conformada por profesionales con experiencia, que nos
+                            <p class="info">Nuestra Tribu esta conformada por profesionales con experiencia, que
+                                nos
                                 permite crear estrategias de marketing, campañas publicitarias, diseño web y piezas
-                                audiovisuales que permiten lograr una inversión segura y estable. Apalancados en la gestión
+                                audiovisuales que permiten lograr una inversión segura y estable. Apalancados en la
+                                gestión
                                 de proyectos de comunicación.</p>
                             <blockquote>
                                 <span>“</span>
@@ -84,53 +95,68 @@
                                 <footer>Henry Ford</footer>
                             </blockquote>
                         </div>
-                        <div class="glide services__slides">
-                            <div class="glide__track" data-glide-el="track">
-                                <ul class="glide__slides">
-                                    <li class="glide__slide services__item">
-                                        <div class="subtitle">
-                                            Diseño Gráfico
-                                        </div>
-                                        <div class="description">
-                                            Un grupo de especialistas en comunicación gráfica, que soporta las
-                                            diferentes
-                                            áreas del diseño gráfico; diseño de logotipo, imagen corporativa,
-                                            diseño de
-                                            papelería, diseño de publicidad exterior y material pop. Ilustración,
-                                            Diseño
-                                            digital, Modelado 3D.
-                                        </div>
-                                    </li>
-                                    <li class="glide__slide  services__item">
-                                            <div class="subtitle">
-                                                    Diseño y Programación Web
-                                                </div>
-                                                <div class="description">
-                                                        Sin plantillas de diseño, diseñamos y programamos el sitio web que se ajusta a los requerimientos del cliente, de la mano de diseñadores web expertos en todo el proceso. Desde páginas web informativas hasta páginas tipo blog y tiendas virtuales.
-                                                </div>  
-                                    </li>
-                                    <li class="glide__slide  services__item">
-                                            <div class="subtitle">
-                                                    Marketing Digital
-                                                </div>
-                                                <div class="description">
-                                                        Servicios de marketing digital orientados a la estrategia de comunicación del cliente, en Facebook, Instagram, Twitter, LinkedIn y otras redes sociales.
-                                                        Potencia la estrategia de marketing en Internet manejando el contenido de valor en las redes adecuadas, pagando solo lo necesario.
-                                                </div>  
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="glide__arrows" data-glide-el="controls">
-                                <button class="glide__arrow glide__arrow--right" data-glide-dir=">"></button>
-                            </div>
+                        <div class="services__slides six columns">
+                            <ul class="slides">
+                                <li class="services__item">
+                                    <div class="subtitle">
+                                        Diseño Gráfico
+                                    </div>
+                                    <div class="description">
+                                        Un grupo de especialistas en comunicación gráfica, que soporta las
+                                        diferentes
+                                        áreas del diseño gráfico; diseño de logotipo, imagen corporativa,
+                                        diseño de
+                                        papelería, diseño de publicidad exterior y material pop. Ilustración,
+                                        Diseño
+                                        digital, Modelado 3D.
+                                    </div>
+                                </li>
+                                <li class="services__item">
+                                    <div class="subtitle">
+                                        Diseño y Programación Web
+                                    </div>
+                                    <div class="description">
+                                        Sin plantillas de diseño, diseñamos y programamos el sitio web que se ajusta a
+                                        los requerimientos del cliente, de la mano de diseñadores web expertos en todo
+                                        el proceso. Desde páginas web informativas hasta páginas tipo blog y tiendas
+                                        virtuales.
+                                    </div>
+                                </li>
+                                <li class="services__item">
+                                    <div class="subtitle">
+                                        Marketing Digital
+                                    </div>
+                                    <div class="description">
+                                        Servicios de marketing digital orientados a la estrategia de comunicación del
+                                        cliente, en Facebook, Instagram, Twitter, LinkedIn y otras redes sociales.
+                                        Potencia la estrategia de marketing en Internet manejando el contenido de valor
+                                        en las redes adecuadas, pagando solo lo necesario.
+                                    </div>
+                                </li>
+                                <li class="services__item">
+                                    <div class="subtitle">
+                                        Marketing Digital
+                                    </div>
+                                    <div class="description">
+                                        Servicios de marketing digital orientados a la estrategia de comunicación del
+                                        cliente, en Facebook, Instagram, Twitter, LinkedIn y otras redes sociales.
+                                        Potencia la estrategia de marketing en Internet manejando el contenido de valor
+                                        en las redes adecuadas, pagando solo lo necesario.
+                                    </div>
+                                </li>
+                            </ul>
+                            <button class="slides__next"></button>
                         </div>
                     </div>
+
                 </div>
             </section>
-            <section id="team">
-                <img src="./assets/team.jpg" alt="" class="home__bg-image">
-                <div class="home__content container">
-                    <div class="home__content---half">
+            <section id="team" class="team content">
+                <picture class="content__bg-image">
+                    <img src="./assets/team.jpg" alt="" class="content__image">
+                </picture>
+                <div class="content__wrapper container">
+                    <div class="content---half">
                         <h1 class="title">4</h1>
                         <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                             eiusmod
@@ -146,9 +172,11 @@
                 </div>
             </section>
             <section id="contact">
-                <img src="./assets/contact.jpg" alt="" class="home__bg-image">
-                <div class="home__content container">
-                    <div class="home__content---half">
+                <picture class="content__bg-image">
+                    <img src="./assets/contact.jpg" alt="" class="content__image">
+                </picture>
+                <div class="content__wrapper container">
+                    <div class="content---half">
                         <h1 class="title">5</h1>
                         <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                             eiusmod
@@ -190,6 +218,8 @@
             </li>
         </ul>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.2/plugins/animation.gsap.js"></script>

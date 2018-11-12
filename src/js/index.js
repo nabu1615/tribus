@@ -1,5 +1,4 @@
 import '../scss/main.scss';
-import Glide from '@glidejs/glide';
 
     (()=> {
         const nodes = {
@@ -17,7 +16,8 @@ import Glide from '@glidejs/glide';
             navItems: document.querySelectorAll('.nav__item'),
             navAnchors: document.querySelectorAll('.nav__anchor'),
             footer: document.querySelector('.footer'),
-            servicesItems: document.querySelector('.services__items'),
+            services: document.querySelector('.slides'),
+            slideNext: document.querySelector('.slides__next'),
             wWidth: window.innerWidth,
             sectionNames: []
         }
@@ -130,14 +130,25 @@ import Glide from '@glidejs/glide';
             nodes.body.removeAttribute('class');
             new TimelineMax().to("#js-slideContainer", 1, { x: "0%" });
         });
-    
-        const glide = new Glide('.glide', {
-            type: 'carousel',
-            perView: 1,
-            autoplay: 7000,
-            mode: 'vertical'
-        });
 
-        glide.mount();
-    
+        $('.slides').slick({
+            infinite: true,
+            vertical: true,
+            verticalSwiping:true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 960,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+          });
+
+          nodes.slideNext.addEventListener('click', () => {
+            $('.slides').slick('slickNext');
+          });
     })()
