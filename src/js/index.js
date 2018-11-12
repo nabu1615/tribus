@@ -151,4 +151,19 @@ import '../scss/main.scss';
           nodes.slideNext.addEventListener('click', () => {
             $('.slides').slick('slickNext');
           });
+
+          $('.team__wrapper').slick({
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            arrows: true,
+            responsive: [
+                {
+                    breakpoint: 960,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+          });
     })()

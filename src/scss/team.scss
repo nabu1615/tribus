@@ -1,0 +1,94 @@
+.team {
+    &__about {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 2;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        font-weight: 600;
+        width: 100%;
+        left: 50%;
+        height: 100%;
+        transform: translateX(-50%);
+        transition: all 1s ease-in-out;
+        display: flex;
+    }
+
+    .title {
+        margin-top: 150px;
+        margin-bottom: 40px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-right: 20px;
+    }
+
+    /* the slides */
+    .slick-slide {
+        margin: 0 10px;
+    }
+    /* the parent */
+    .slick-list {
+        margin: 0 -10px;
+    }
+
+    .slick-next {
+        right: -35px;
+    }
+
+    .slick-prev {
+        left: -35px;
+    }
+
+    .slick-arrow {
+        &:before {
+        color: $base;
+        font-size: 25px;
+        }
+    }
+
+    &__picture {
+        position: relative;
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+        &:hover {
+            .team__about {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__name {
+        font-weight: 600;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    &__profile {
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: rgba(white, 0.9)
+    }
+
+    &__links {
+        li {
+            display: inline-block;
+            margin: 0 5px;
+            transition: all 1s ease-in-out;
+            color: rgba($base, 0.7);
+            a:hover {
+                opacity: .8;
+                color: $second;
+            }
+        }
+    }
+}

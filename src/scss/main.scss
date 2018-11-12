@@ -2,6 +2,7 @@
 @import "./grid";
 @import "./header";
 @import "./services";
+@import "./team";
 
 * {
   box-sizing: border-box;
@@ -77,6 +78,14 @@ body {
       }
     }
 
+    footer {
+      i {
+        color: $base;
+      }
+    }
+  }
+
+  &.body--team {
     footer {
       i {
         color: $base;
@@ -249,7 +258,7 @@ $panelcount: 5;
       width: 100%;
       position: absolute;
       left: 0;
-      top: 50%;
+      top: 45%;
       transform: translateY(-50%);
       z-index: 1;
       text-align: center;
