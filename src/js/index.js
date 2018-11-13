@@ -17,7 +17,8 @@ import '../scss/main.scss';
             navAnchors: document.querySelectorAll('.nav__anchor'),
             footer: document.querySelector('.footer'),
             services: document.querySelector('.slides'),
-            slideNext: document.querySelector('.slides__next'),
+            slideNext: document.querySelector('.slides__arrow--next'),
+            slidePrev: document.querySelector('.slides__arrow--prev'),
             wWidth: window.innerWidth,
             sectionNames: []
         }
@@ -131,6 +132,13 @@ import '../scss/main.scss';
             new TimelineMax().to("#js-slideContainer", 1, { x: "0%" });
         });
 
+        document.querySelector('.home--about').addEventListener('click', (e) => {
+            new TimelineMax()
+            .to(".sections", 1, {x: "-20%"});
+
+            ctrl.scrollTo('#about');
+        });
+
         $('.slides').slick({
             infinite: true,
             vertical: true,
@@ -144,12 +152,23 @@ import '../scss/main.scss';
                     settings: {
                         slidesToShow: 1
                     }
+                },
+                {
+                    breakpoint: 1440,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
                 }
             ]
           });
 
           nodes.slideNext.addEventListener('click', () => {
             $('.slides').slick('slickNext');
+          });
+
+          nodes.slidePrev.addEventListener('click', () => {
+            $('.slides').slick('slickPrev');
           });
 
           $('.team__wrapper').slick({
@@ -162,6 +181,13 @@ import '../scss/main.scss';
                     breakpoint: 960,
                     settings: {
                         slidesToShow: 1
+                    }
+                },
+                {
+                    breakpoint: 1440,
+                    settings: {
+                        slidesToShow: 5,
+                        slidesToScroll: 1
                     }
                 }
             ]

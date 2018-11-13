@@ -1,0 +1,30 @@
+.contact {
+    &__wrapper {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    form {
+        text-align: right;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        background-color: $base;
+        color: white;
+        font-family: "Raleway", sans-serif;
+        font-size: 16px;
+        border-radius: 0;
+    }
+
+    input {
+        height: 40px;
+    }
+
+    ::placeholder {
+        color: white;
+        font-family: "Raleway", sans-serif;
+    }
+}

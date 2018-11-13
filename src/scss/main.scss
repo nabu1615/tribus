@@ -3,6 +3,12 @@
 @import "./header";
 @import "./services";
 @import "./team";
+@import "./contact";
+
+@keyframes services {
+  0% { background-color: transparent }
+  100% { background-color: rgba(51, 51, 51, 0.9) }
+}
 
 * {
   box-sizing: border-box;
@@ -96,7 +102,8 @@ body {
   &.body--services {
     .content {
       &:after {
-        background-color: rgba($base, 0.9);
+        animation: services 3s;
+        animation-fill-mode: forwards;
       }
     }
 
@@ -148,7 +155,7 @@ body {
   font-weight: 800;
   font-size: 30px;
   @media (min-width: $desktop) {
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 900;
   }
 }
