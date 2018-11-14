@@ -155,7 +155,7 @@ import '../scss/main.scss';
                     }
                 },
                 {
-                    breakpoint: 1200,
+                    breakpoint: 1550,
                     settings: {
                         slidesToShow: 2,
                         slidesToScroll: 1
@@ -185,7 +185,7 @@ import '../scss/main.scss';
                     }
                 },
                 {
-                    breakpoint: 1200,
+                    breakpoint: 1550,
                     settings: {
                         slidesToShow: 5,
                         slidesToScroll: 1
