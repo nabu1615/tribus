@@ -20,7 +20,8 @@ import '../scss/main.scss';
             slideNext: document.querySelector('.slides__arrow--next'),
             slidePrev: document.querySelector('.slides__arrow--prev'),
             wWidth: window.innerWidth,
-            sectionNames: []
+            sectionNames: [],
+            breakPoint: 960
         }
 
         const ctrl = new ScrollMagic.Controller({
@@ -33,7 +34,7 @@ import '../scss/main.scss';
         window.addEventListener('resize', () => {
             nodes.wWidth = window.innerWidth;
 
-            if (nodes.wWidth <= 1000) {
+            if (nodes.wWidth <= nodes.breakPoint) {
                 nodes.sectionsWrapper.removeAttribute('style');
             }
         });
@@ -53,7 +54,7 @@ import '../scss/main.scss';
     
                 ctrl.scrollTo(id);
     
-                if (nodes.wWidth >= 980) {
+                if (nodes.wWidth >=  nodes.breakPoint) {
                     id = id.replace('#', '');
                     switch (id) {
                         case 'about':
@@ -96,7 +97,7 @@ import '../scss/main.scss';
                 nodes.body.removeAttribute('class');
                 nodes.body.classList.add(`body--${id.replace('#', '')}`);
                 
-                if (nodes.wWidth >= 1000) {
+                if (nodes.wWidth >= nodes.breakPoint) {
                     e.target.classList.add('active');
                 }
 
@@ -154,7 +155,7 @@ import '../scss/main.scss';
                     }
                 },
                 {
-                    breakpoint: 1440,
+                    breakpoint: 1200,
                     settings: {
                         slidesToShow: 2,
                         slidesToScroll: 1
@@ -184,7 +185,7 @@ import '../scss/main.scss';
                     }
                 },
                 {
-                    breakpoint: 1440,
+                    breakpoint: 1200,
                     settings: {
                         slidesToShow: 5,
                         slidesToScroll: 1
