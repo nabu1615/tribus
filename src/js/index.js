@@ -59,19 +59,19 @@ import '../scss/main.scss';
                     switch (id) {
                         case 'about':
                         new TimelineMax()
-                        .to(".sections", 1, {x: "-20%"});
+                        .to(".sections", 2, {x: "-20%"});
                         break;
                         case 'services':
                         new TimelineMax()
-                        .to(".sections", 1, {x: "-40%"});
+                        .to(".sections", 2, {x: "-40%"});
                         break;
                         case 'team':
                         new TimelineMax()
-                        .to(".sections", 1, {x: "-60%"});
+                        .to(".sections", 2, {x: "-60%"});
                         break;
                         case 'contact':
                         new TimelineMax()
-                        .to(".sections", 1, {x: "-80%"});
+                        .to(".sections", 2, {x: "-80%"});
                         break;
                         default:
                             break;
@@ -181,7 +181,7 @@ import '../scss/main.scss';
                 {
                     breakpoint: 960,
                     settings: {
-                        slidesToShow: 1
+                        slidesToShow: 2
                     }
                 },
                 {

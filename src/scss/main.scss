@@ -261,6 +261,8 @@ $panelcount: 5;
     z-index: 1;
     position: relative;
     height: 100%;
+    display: flex;
+    flex-flow: column;
     .content---half {
       width: 100%;
       position: absolute;
