@@ -1,9 +1,10 @@
 .contact {
     &__wrapper {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
         width: 100%;
+    }
+
+    .content__wrapper {
+        justify-content: center;
     }
 
     &__form {
@@ -12,6 +13,7 @@
 
     form {
         text-align: right;
+        width: 100;
     }
 
     input,
