@@ -9,7 +9,8 @@ module.exports =  {
         filename: 'js/bundle.js'
     },
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        host: '192.168.0.3'
     },
     plugins: [
         new HtmlWebPackPlugin(

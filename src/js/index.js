@@ -30,6 +30,16 @@ import '../scss/main.scss';
                 duration: 561
             }
         })
+
+
+        window.onscroll = function() {
+            if (window.scrollY > 0) {
+                nodes.header.classList.add('active');
+            } else {
+                nodes.header.classList.remove('active');
+            }
+        };
+
         
         window.addEventListener('resize', () => {
             nodes.wWidth = window.innerWidth;

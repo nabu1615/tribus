@@ -15,7 +15,10 @@
         height: 100%;
         transform: translateX(-50%);
         transition: all 1s ease-in-out;
-        display: flex;
+        display: none;
+        @media (min-width: $desktop) {
+            display: flex;
+        }
     }
 
     .title {
@@ -42,6 +45,14 @@
     .slick-next,
     .slick-prev {
         z-index: 3;
+        transform: initial;
+        top: auto;
+        bottom: 10px;
+        @media (min-width: $desktop) {
+            top: 50%;
+            bottom: auto;
+            transform: translateY(0, -50%);
+        }
     }
 
     .slick-next {
