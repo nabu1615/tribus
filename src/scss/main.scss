@@ -203,7 +203,9 @@ a {
 .logo {
   cursor: pointer;
   position: relative;
-  top: 10px;
+  @media only screen and (min-width: $desktop) {
+    top: 10px;
+  }
   img {
     width: 120px;
     @media only screen and (min-width: $desktop) {

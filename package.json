@@ -12,8 +12,8 @@
   "author": "javier vargas",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
     "axios": "^0.18.0",
     "babel-loader": "^8.0.4",
     "css-loader": "^0.28.11",
